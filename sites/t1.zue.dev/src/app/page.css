@@ -1,0 +1,10 @@
+body {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+nav > div {
+  max-width: 640px;
+  /* center div */
+  transform: translateX(calc(-50% + 50vw));
+}
