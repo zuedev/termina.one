@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+
 const links = [
   {
     type: "link",
@@ -13,23 +15,53 @@ const links = [
     name: "About",
     url: "/about",
     disabled: true,
+    title: "Coming Soon",
+  },
+  {
+    type: "section",
+    name: "Products",
+    children: [
+      {
+        type: "link",
+        name: "LiteSpeed",
+        url: "/products/litespeed",
+        disabled: true,
+        title: "Coming Soon",
+      },
+    ],
+  },
+  {
+    type: "section",
+    name: "Services",
+    children: [
+      {
+        type: "link",
+        name: "Managed Hosting",
+        url: "/services/managed-hosting",
+        disabled: true,
+        title: "Coming Soon",
+      },
+    ],
+  },
+  {
+    type: "section",
+    name: "Solutions",
+    children: [
+      {
+        type: "link",
+        name: "Application Delivery",
+        url: "/solutions/application-delivery",
+        disabled: true,
+        title: "Coming Soon",
+      },
+    ],
   },
   {
     type: "link",
     name: "Contact",
     url: "/contact",
     disabled: true,
-  },
-  {
-    type: "section",
-    name: "Projects",
-    children: [
-      {
-        type: "link",
-        name: "Hosting",
-        url: "https://hosting.t1.zue.dev",
-      },
-    ],
+    title: "Coming Soon",
   },
 ];
 
@@ -58,12 +90,24 @@ export default function NavBar() {
     <nav>
       <div className="flex justify-between items-center fixed w-full top-0 left-0 p-4">
         <img src="/t1_logo_tight.png" alt="Termina One Logo" className="w-16" />
-        <span
-          onClick={handleMenuClick}
-          className="text-white text-2xl hover:cursor-pointer font-bold"
-        >
-          Menu
-        </span>
+        <div className="flex space-x-4 items-center">
+          <div>
+            <SignedOut>
+              <SignInButton className="text-xl hover:cursor-pointer font-bold bg-green-500 text-black px-2 py-1" />
+            </SignedOut>
+            <SignedIn>
+              <div className="pt-2">
+                <UserButton />
+              </div>
+            </SignedIn>
+          </div>
+          <span
+            onClick={handleMenuClick}
+            className="text-white text-xl hover:cursor-pointer font-bold"
+          >
+            Menu
+          </span>
+        </div>
       </div>
       <div
         className={`${
@@ -88,6 +132,7 @@ export default function NavBar() {
                         : "hover:text-t1-yellow"
                     }`}
                     key={link.name}
+                    title={link.title}
                   >
                     {link.name}
                   </a>
@@ -99,11 +144,15 @@ export default function NavBar() {
                         <a
                           key={child.name}
                           href={child.url}
+                          {...(child.disabled
+                            ? { onClick: (e) => e.preventDefault() }
+                            : {})}
                           className={`${
-                            link.disabled
-                              ? "text-gray-400 line-through"
+                            child.disabled
+                              ? "text-gray-400 line-through hover:cursor-not-allowed"
                               : "hover:text-t1-yellow"
                           }`}
+                          title={child.title}
                         >
                           {child.name}
                         </a>
