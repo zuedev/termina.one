@@ -1,0 +1,3 @@
+# Privacy Policy
+
+At Termina One, we respect your privacy and are committed to protecting it. The only personal information we collect is the information you voluntarily provide when you contact us to inquire about our services or products. This information is used solely to assist you and fulfill your requests. We do not collect any information automatically, nor do we sell or share your information with any third parties. By using our services, you consent to this simple and straightforward use of your personal data.
