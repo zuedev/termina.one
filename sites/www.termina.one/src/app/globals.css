@@ -2,20 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --t1-yellow: #ff0;
-}
-
-.t1-bg-yellow {
-  background-color: var(--t1-yellow);
-}
-
-.t1-text-yellow {
-  color: var(--t1-yellow);
-}
-
 html {
-  background-color: var(--t1-yellow);
+  background-color: black;
 }
 
 /* hide scrollbar */

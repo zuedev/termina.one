@@ -1,11 +1,6 @@
-html {
-  background: black;
-}
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  border: 20px solid var(--t1-yellow);
 }
