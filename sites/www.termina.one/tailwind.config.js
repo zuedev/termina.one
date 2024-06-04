@@ -5,13 +5,6 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
-      // add custom colours
-      colors: {
-        "t1-yellow": "#ff0",
-      },
-    },
-  },
+  theme: {},
   plugins: [],
 };
