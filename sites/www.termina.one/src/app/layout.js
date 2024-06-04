@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
+import { Noto_Sans as PrimaryFontImport } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const PrimaryFont = PrimaryFontImport({
+  subsets: ["latin"],
+});
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const metadata = {
@@ -43,7 +45,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="utf-8" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={PrimaryFont.className}>{children}</body>
     </html>
   );
 }
