@@ -9,7 +9,7 @@ export default function Home() {
     <main className="bg-black text-white">
       <div
         style={{
-          height: "85vh",
+          height: "33vh",
         }}
       >
         <video
@@ -22,7 +22,15 @@ export default function Home() {
         />
         <NavBar />
       </div>
-      <div className="px-4 py-4 space-y-8">
+      <div
+        className="px-4 py-4 space-y-8"
+        style={{
+          margin: "0 auto",
+          maxWidth: "90vw",
+          paddingTop: "5vh",
+          paddingBottom: "5vh",
+        }}
+      >
         <div className="space-y-4">
           <h1 className="text-6xl font-bold">
             Termina One, <br />
