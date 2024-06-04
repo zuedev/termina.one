@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-
 const links = [
   {
     type: "link",
@@ -91,16 +89,6 @@ export default function NavBar() {
       <div className="flex justify-between items-center fixed w-full top-0 left-0 p-4">
         <img src="/t1_logo_tight.png" alt="Termina One Logo" className="w-16" />
         <div className="flex space-x-4 items-center">
-          <div>
-            <SignedOut>
-              <SignInButton className="text-xl hover:cursor-pointer font-bold bg-green-500 text-black px-2 py-1" />
-            </SignedOut>
-            <SignedIn>
-              <div className="pt-2">
-                <UserButton />
-              </div>
-            </SignedIn>
-          </div>
           <span
             onClick={handleMenuClick}
             className="text-white text-xl hover:cursor-pointer font-bold"
