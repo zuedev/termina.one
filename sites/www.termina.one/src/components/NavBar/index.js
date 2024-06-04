@@ -1,161 +1,100 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const links = [
   {
-    type: "link",
-    name: "Home",
+    text: "Home",
     url: "/",
   },
   {
-    type: "link",
-    name: "About",
+    text: "About",
     url: "/about",
     disabled: true,
-    title: "Coming Soon",
   },
   {
-    type: "section",
-    name: "Products",
+    text: "Solutions",
+    url: null,
     children: [
       {
-        type: "link",
-        name: "LiteSpeed",
-        url: "/products/litespeed",
+        text: "AI and Machine Learning",
+        url: "/solutions/ai-and-machine-learning",
         disabled: true,
-        title: "Coming Soon",
       },
-    ],
-  },
-  {
-    type: "section",
-    name: "Services",
-    children: [
       {
-        type: "link",
-        name: "Managed Hosting",
-        url: "/services/managed-hosting",
-        disabled: true,
-        title: "Coming Soon",
+        text: "Website Hosting",
+        url: "/solutions/website-hosting",
       },
     ],
-  },
-  {
-    type: "section",
-    name: "Solutions",
-    children: [
-      {
-        type: "link",
-        name: "Application Delivery",
-        url: "/solutions/application-delivery",
-        disabled: true,
-        title: "Coming Soon",
-      },
-    ],
-  },
-  {
-    type: "link",
-    name: "Contact",
-    url: "/contact",
-    disabled: true,
-    title: "Coming Soon",
   },
 ];
 
-export default function NavBar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleMenuClick = () => {
-    setMenuOpen(!menuOpen);
-  };
-
+export default () => {
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
       const navbar = document.querySelector("nav > div:first-child");
 
       if (window.scrollY > 0) {
         navbar.style.background = "black";
-        navbar.style.padding = "0.5rem";
       } else {
         navbar.style.background = "transparent";
-        navbar.style.padding = "1rem";
       }
     });
   });
 
   return (
     <nav>
-      <div className="flex justify-between items-center fixed w-full top-0 left-0 p-4">
+      <div className="flex justify-between fixed w-full top-0 left-0 p-4">
         <img src="/t1_logo_tight.png" alt="Termina One Logo" className="w-16" />
+
         <div className="flex space-x-4 items-center">
-          <span
-            onClick={handleMenuClick}
-            className="text-white text-xl hover:cursor-pointer font-bold"
-          >
-            Menu
-          </span>
-        </div>
-      </div>
-      <div
-        className={`${
-          menuOpen ? "flex" : "hidden"
-        } flex-col justify-center items-center text-white text-2xl fixed w-full top-0 left-0 h-screen bg-black bg-opacity-90`}
-        onClick={handleMenuClick}
-      >
-        <div className="flex flex-col justify-center space-y-4">
-          <h2 className="text-4xl font-bold">Navigation Menu</h2>
-          <div className="flex flex-col space-y-1">
-            {links.map((link) => (
-              <div key={link.name}>
-                {link.type === "link" ? (
-                  <a
-                    href={link.url}
-                    {...(link.disabled
-                      ? { onClick: (e) => e.preventDefault() }
-                      : {})}
-                    className={`${
-                      link.disabled
-                        ? "text-gray-400 line-through hover:cursor-not-allowed"
-                        : "hover:text-t1-yellow"
-                    }`}
-                    key={link.name}
-                    title={link.title}
-                  >
-                    {link.name}
+          {links.map((link, index) => (
+            <div key={index} className="group relative">
+              <a
+                href={link.url}
+                className={
+                  "text-white hover:text-gray-300" +
+                  (link.disabled
+                    ? " opacity-50 cursor-not-allowed line-through"
+                    : "")
+                }
+              >
+                {link.text}
+              </a>
+              {link.children && (
+                <div className="absolute bg-white p-2 -top-2 -left-2 hidden group-hover:block hover:block text-black space-y-4">
+                  <a href={link.url} className="font-bold">
+                    {link.text}
                   </a>
-                ) : (
-                  <div className="flex flex-col space-y-1">
-                    <span className="font-bold">{link.name}</span>
-                    <div className="flex flex-col space-y-1 pl-4">
-                      {link.children.map((child) => (
-                        <a
-                          key={child.name}
-                          href={child.url}
-                          {...(child.disabled
-                            ? { onClick: (e) => e.preventDefault() }
-                            : {})}
-                          className={`${
-                            child.disabled
-                              ? "text-gray-400 line-through hover:cursor-not-allowed"
-                              : "hover:text-t1-yellow"
-                          }`}
-                          title={child.title}
-                        >
-                          {child.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <span className="text-sm mt-4 text-gray-400">
-            Click/press anywhere to close
-          </span>
+                  {link.children.map((child, childIndex) => (
+                    <a
+                      key={childIndex}
+                      href={child.url}
+                      className={
+                        "block hover:text-gray-300" +
+                        (child.disabled
+                          ? " opacity-50 cursor-not-allowed line-through"
+                          : "")
+                      }
+                    >
+                      {child.text}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="flex space-x-4 items-center">
+          <a href="/login" className="text-white hover:text-gray-300">
+            Login
+          </a>
+          <a href="/register" className="text-white hover:text-gray-300">
+            Register
+          </a>
         </div>
       </div>
     </nav>
   );
-}
+};
