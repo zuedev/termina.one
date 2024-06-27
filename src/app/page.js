@@ -1,34 +1,24 @@
 import "./page.css";
-import NavBar from "../components/NavBar";
 
 export default function Home() {
   const placeholderImage =
     "https://placehold.co/1920x1080/222/fff?text=Coming+Soon";
 
   return (
-    <main className="bg-black text-white">
+    <>
+      <video
+        src="/pexels-cottonbro-8721655 (1080p).mp4"
+        className="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
+        autoPlay
+        playsInline
+        loop
+        muted
+      />
       <div
-        style={{
-          height: "33vh",
-        }}
-      >
-        <video
-          src="/pexels-cottonbro-8721655 (1080p).mp4"
-          className="object-cover w-full h-full z-1"
-          autoPlay
-          playsInline
-          loop
-          muted
-        />
-        <NavBar />
-      </div>
-      <div
-        className="px-4 py-4 space-y-8"
+        className="space-y-8"
         style={{
           margin: "0 auto",
           maxWidth: "90vw",
-          paddingTop: "5vh",
-          paddingBottom: "5vh",
         }}
       >
         <div className="space-y-4">
@@ -76,6 +66,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </>
   );
 }

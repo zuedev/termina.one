@@ -3,15 +3,15 @@
 import { useEffect } from "react";
 
 const links = [
-  {
-    text: "Home",
-    url: "/",
-  },
-  {
-    text: "About",
-    url: "/about",
-    disabled: true,
-  },
+  // {
+  //   text: "Home",
+  //   url: "/",
+  // },
+  // {
+  //   text: "About",
+  //   url: "/about",
+  //   disabled: true,
+  // },
   // {
   //   text: "Products",
   //   url: null,
@@ -67,7 +67,13 @@ export default () => {
   return (
     <nav>
       <div className="flex justify-between fixed w-full top-0 left-0 p-4">
-        <img src="/t1_logo_tight.png" alt="Termina One Logo" className="w-16" />
+        <a href="/">
+          <img
+            src="/t1_logo_tight.png"
+            alt="Termina One Logo"
+            className="w-16"
+          />
+        </a>
 
         <div className="flex space-x-4 items-center">
           {links.map((link, index) => (

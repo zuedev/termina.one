@@ -1,6 +1,8 @@
 import { Noto_Sans as PrimaryFontImport } from "next/font/google";
 import "./globals.css";
 
+import NavBar from "../components/NavBar";
+
 const PrimaryFont = PrimaryFontImport({
   subsets: ["latin"],
 });
@@ -45,7 +47,12 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="utf-8" />
       </head>
-      <body className={PrimaryFont.className}>{children}</body>
+      <body className={PrimaryFont.className}>
+        <NavBar />
+        <main className="bg-black text-white max-w-[90vw] md:max-w-[666px] mx-auto mt-[20vh] min-h-[80vh] p-4 text-justify">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
