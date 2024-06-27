@@ -12,21 +12,43 @@ const links = [
     url: "/about",
     disabled: true,
   },
-  {
-    text: "Solutions",
-    url: null,
-    children: [
-      {
-        text: "AI and Machine Learning",
-        url: "/solutions/ai-and-machine-learning",
-        disabled: true,
-      },
-      {
-        text: "Website Hosting",
-        url: "/solutions/website-hosting",
-      },
-    ],
-  },
+  // {
+  //   text: "Products",
+  //   url: null,
+  //   children: [
+  //     {
+  //       text: "Virtual Machines",
+  //       url: "/virtual-machines",
+  //       disabled: true,
+  //     },
+  //   ],
+  // },
+  // {
+  //   text: "Services",
+  //   url: null,
+  //   children: [
+  //     {
+  //       text: "LightSpeed",
+  //       url: "/lightspeed",
+  //     },
+  //   ],
+  // },
+  // {
+  //   text: "Solutions",
+  //   url: null,
+  //   children: [
+  //     {
+  //       text: "AI and Machine Learning",
+  //       url: "/ai-and-machine-learning",
+  //       disabled: true,
+  //     },
+  //     {
+  //       text: "Website Hosting",
+  //       url: "/website-hosting",
+  //       disabled: true,
+  //     },
+  //   ],
+  // },
 ];
 
 export default () => {
@@ -87,11 +109,11 @@ export default () => {
         </div>
 
         <div className="flex space-x-4 items-center">
-          <a href="/login" className="text-white hover:text-gray-300">
+          <a
+            href="https://billing.stripe.com/p/login/eVa7sP02z7018Ja000"
+            className="text-white hover:text-gray-300"
+          >
             Login
-          </a>
-          <a href="/register" className="text-white hover:text-gray-300">
-            Register
           </a>
         </div>
       </div>
