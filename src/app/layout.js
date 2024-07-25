@@ -2,6 +2,8 @@ import "./globals.css";
 
 import { Noto_Sans as FontSans } from "next/font/google";
 
+import NavBar from "#components/zuedev/NavBar";
+
 const fontSans = FontSans({
   subsets: ["latin"],
 });
@@ -25,7 +27,10 @@ export const viewport = {
 export default ({ children }) => {
   return (
     <html lang="en" className={fontSans.className}>
-      <body className="max-w-3xl mx-auto bg-black text-white">{children}</body>
+      <body className="bg-[yellow]">
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 };
