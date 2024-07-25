@@ -1,69 +1,58 @@
 "use client";
 
-import { useEffect } from "react";
-
 const links = [
-  // {
-  //   text: "Home",
-  //   url: "/",
-  // },
-  // {
-  //   text: "About",
-  //   url: "/about",
-  //   disabled: true,
-  // },
-  // {
-  //   text: "Products",
-  //   url: null,
-  //   children: [
-  //     {
-  //       text: "Virtual Machines",
-  //       url: "/virtual-machines",
-  //       disabled: true,
-  //     },
-  //   ],
-  // },
-  // {
-  //   text: "Services",
-  //   url: null,
-  //   children: [
-  //     {
-  //       text: "LightSpeed",
-  //       url: "/lightspeed",
-  //     },
-  //   ],
-  // },
-  // {
-  //   text: "Solutions",
-  //   url: null,
-  //   children: [
-  //     {
-  //       text: "AI and Machine Learning",
-  //       url: "/ai-and-machine-learning",
-  //       disabled: true,
-  //     },
-  //     {
-  //       text: "Website Hosting",
-  //       url: "/website-hosting",
-  //       disabled: true,
-  //     },
-  //   ],
-  // },
+  {
+    text: "Home",
+    url: "/",
+  },
+  {
+    text: "About",
+    url: "/about",
+    disabled: true,
+  },
+  {
+    text: "Products",
+    url: null,
+    disabled: true,
+    children: [
+      {
+        text: "Virtual Machines",
+        url: "/virtual-machines",
+        disabled: true,
+      },
+    ],
+  },
+  {
+    text: "Services",
+    url: null,
+    disabled: true,
+    children: [
+      {
+        text: "LightSpeed",
+        url: "/lightspeed",
+      },
+    ],
+  },
+  {
+    text: "Solutions",
+    url: null,
+    disabled: true,
+    children: [
+      {
+        text: "AI and Machine Learning",
+        url: "/ai-and-machine-learning",
+        disabled: true,
+      },
+      {
+        text: "Website Hosting",
+        url: "/website-hosting",
+        disabled: true,
+      },
+    ],
+  },
 ];
 
 export default () => {
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      const navbar = document.querySelector("nav > div:first-child");
-
-      if (window.scrollY > 0) {
-        navbar.style.background = "black";
-      } else {
-        navbar.style.background = "transparent";
-      }
-    });
-  });
-
   return (
     <nav>
       <div className="flex justify-between fixed w-full top-0 left-0 p-4">
@@ -89,7 +78,7 @@ export default () => {
               >
                 {link.text}
               </a>
-              {link.children && (
+              {link.children && !link.disabled && (
                 <div className="absolute bg-white p-2 -top-2 -left-2 hidden group-hover:block hover:block text-black space-y-4">
                   <a href={link.url} className="font-bold">
                     {link.text}

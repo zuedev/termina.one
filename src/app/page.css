@@ -1,21 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+main {
+  font-size: 6vw;
+  font-weight: 700;
+  background: black;
 
-html {
-  background-color: black;
-}
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-/* hide scrollbar */
-::-webkit-scrollbar {
-  display: none;
-}
-
-body {
-  margin: 0 auto;
-}
-
-nav > div {
-  /* center div */
-  transform: translateX(calc(-50% + 50vw));
+  padding: 1rem 2rem;
 }
