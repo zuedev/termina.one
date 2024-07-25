@@ -26,9 +26,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Copy raw html files
-        run: cp -r raw-html/ out/raw/
-
       - name: Copy cf files
         run: cp -r cloudflare/* out/
 
