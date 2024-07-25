@@ -12,9 +12,9 @@ export default () => {
           </a>
           <div className="flex items-center font-bold space-x-4">
             {[
-              { href: "/about", label: "About" },
-              { href: "/services", label: "Services" },
-              { href: "/contact", label: "Contact" },
+              // { href: "/about", label: "About" },
+              // { href: "/services", label: "Services" },
+              // { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
               <a
                 key={`${href}${label.split(" ").join("-").toLowerCase()}`}
