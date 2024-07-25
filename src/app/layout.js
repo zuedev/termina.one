@@ -1,13 +1,10 @@
-import { Inter as FontSans } from "next/font/google";
+import "./globals.css";
+
+import { Noto_Sans as FontSans } from "next/font/google";
 
 const fontSans = FontSans({
   subsets: ["latin"],
-  variable: "--font-sans",
 });
-
-import "./globals.css";
-
-import NavBar from "../components/NavBar";
 
 export const metadata = {
   title: "Termina One, Tech Wizards 🧙",
@@ -23,24 +20,12 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "yellow" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
 };
 
-export default function RootLayout({ children }) {
+export default ({ children }) => {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={
-          "min-h-screen bg-background antialiased bg-black text-white " +
-          fontSans.variable
-        }
-      >
-        <NavBar />
-        {children}
-      </body>
+    <html lang="en" className={fontSans.className}>
+      <body className="max-w-3xl mx-auto bg-black text-white">{children}</body>
     </html>
   );
-}
+};
