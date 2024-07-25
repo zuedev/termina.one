@@ -14,9 +14,9 @@ export default () => {
           We bring you the best hosting solutions for your business. Whether
           you're a small business or a large enterprise, we've got you covered.
         </p>
-        <button className="bg-[yellow] text-black px-4 py-2 font-bold">
+        {/* <button className="bg-[yellow] text-black px-4 py-2 font-bold">
           Get started
-        </button>
+        </button> */}
       </div>
 
       <div className="my-16 p-4 space-y-4 text-center">
