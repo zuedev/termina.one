@@ -3,6 +3,7 @@ import "./globals.css";
 import { Noto_Sans as FontSans } from "next/font/google";
 
 import NavBar from "#components/zuedev/NavBar";
+import TopBar from "#components/zuedev/TopBar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -28,6 +29,12 @@ export default ({ children }) => {
   return (
     <html lang="en" className={fontSans.className}>
       <body className="bg-black text-white">
+        <a href="https://calendar.app.google/TKWTjkA9psVBW4Ab6" _target="blank">
+          <TopBar>
+            <b>Limited Time Offer:</b> Get 50% off your first hour of consulting
+            by booking now!
+          </TopBar>
+        </a>
         <NavBar />
         {children}
       </body>
