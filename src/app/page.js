@@ -1,82 +1,86 @@
 export default () => {
   return (
-    <div className="bg-black text-white">
-      <div className="max-w-4xl mx-auto py-16 md:py-32 space-y-32">
-        <div className="space-y-8 text-center">
-          <h1 className="text-5xl font-bold">
-            Hosting <span className="text-[yellow]">made simple</span> for
-            businesses both big and small.
-          </h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            We bring you the best hosting solutions for your business. Whether
-            you're a small business or a large enterprise, we've got you
-            covered.
-          </p>
-          {/* <button className="bg-[yellow] text-black px-4 py-2 font-bold">
-          Get started
-        </button> */}
-        </div>
+    <div className="mx-4 py-32 space-y-32">
+      <div className="max-w-5xl mx-auto space-y-8 text-center">
+        <h1 className="text-6xl font-bold">
+          Hosting <span className="text-[yellow]">made simple</span> for
+          businesses both big and small.
+        </h1>
+        <p className="text-3xl max-w-3xl mx-auto">
+          We bring you the best hosting solutions for your business. Whether
+          you're a small business or a large enterprise, we've got you covered.
+        </p>
+      </div>
 
-        <div className="space-y-4 text-center">
-          <p className="text-md">Trusted by these fine companies</p>
-          <div className="flex justify-center space-x-4">
-            {[
-              {
-                src: "/customer-novembergames.png",
-                alt: "November Games",
-                href: "https://novembergames.com",
-              },
-              {
-                src: "/customer-baycat.png",
-                alt: "Baycat",
-                href: "https://baycat.co.uk",
-              },
-              {
-                src: "/customer-aspenwoolf.png",
-                alt: "Aspen Woolf",
-                href: "https://aspenwoolf.co.uk",
-              },
-              {
-                src: "/customer-worldanvil.png",
-                alt: "World Anvil",
-                href: "https://worldanvil.com",
-              },
-            ].map(({ src, alt, href }) => (
-              <a
-                key={alt}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={src} alt={alt} className="object-contain w-64" />
-              </a>
-            ))}
-          </div>
+      <div className="max-w-4xl mx-auto space-y-4">
+        <p className="text-center">Trusted by these fine companies</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 justify-items-center">
+          {[
+            {
+              src: "/customer-novembergames.png",
+              alt: "November Games",
+              href: "https://novembergames.com",
+            },
+            {
+              src: "/customer-baycat.png",
+              alt: "Baycat",
+              href: "https://baycat.co.uk",
+            },
+            {
+              src: "/customer-aspenwoolf.png",
+              alt: "Aspen Woolf",
+              href: "https://aspenwoolf.co.uk",
+            },
+            {
+              src: "/customer-worldanvil.png",
+              alt: "World Anvil",
+              href: "https://worldanvil.com",
+            },
+            {
+              src: "/customer-coresciences.jpg",
+              alt: "CoreSciences",
+              href: "https://coresciences.co.uk",
+            },
+            {
+              src: "/customer-coredatasystems.jpg",
+              alt: "CORE Data Systems Ltd",
+              href: "https://www.coredatasystems.co.uk",
+            },
+          ].map(({ src, alt, href }) => (
+            <a key={alt} href={href} target="_blank" rel="noopener noreferrer">
+              <img
+                src={src}
+                alt={alt}
+                className="object-cover h-32 w-32 transition-transform hover:scale-110"
+              />
+            </a>
+          ))}
         </div>
       </div>
 
-      <div className="py-16 md:py-32 p-4 space-y-8 text-center bg-[yellow] text-black text-justify">
-        <div className="max-w-6xl mx-auto flex space-x-4 gap-8">
-          <div>
-            <h2 className="text-3xl font-bold">11 Years</h2>
-            <p className="text-lg">
-              Experience in hosting and serving both small and enterprise-level
-              businesses.
-            </p>
+      <div className="flex flex-col md:flex-row justify-between mx-16 text-justify gap-16">
+        {[
+          {
+            title: "12+ Years",
+            description:
+              "Experience in hosting and serving both small and enterprise-level businesses.",
+          },
+          {
+            title: "99%",
+            description:
+              "Uptime guarantee SLA available. Have the confidence to do business online.",
+          },
+          {
+            title: "15.6 million+",
+            description:
+              "Web requests served every month. We're here to help you scale.",
+          },
+        ].map(({ title, description }) => (
+          <div key={title}>
+            <h2 className="text-4xl font-bold">{title}</h2>
+            <p className="text-lg">{description}</p>
           </div>
-          <div>
-            <h2 className="text-3xl font-bold">99.9%</h2>
-            <p className="text-lg">
-              Approval rating from our customers. We're here to help you grow.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold">15.6 million+</h2>
-            <p className="text-lg">
-              Web requests served every month. We're here to help you scale.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

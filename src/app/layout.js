@@ -27,7 +27,7 @@ export const viewport = {
 export default ({ children }) => {
   return (
     <html lang="en" className={fontSans.className}>
-      <body className="bg-[yellow]">
+      <body className="bg-black text-white">
         <NavBar />
         {children}
       </body>
