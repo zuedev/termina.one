@@ -14,18 +14,18 @@ export default () => {
         <input
           name="name"
           type="text"
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full p-2 border border-gray-300"
           placeholder="John Doe"
         />
         <input
           name="email"
           type="email"
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full p-2 border border-gray-300"
           placeholder="email@domain.tld"
         />
         <textarea
           name="message"
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full p-2 border border-gray-300"
           placeholder="Your message here..."
         ></textarea>
         <button
