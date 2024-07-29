@@ -1,6 +1,6 @@
 export default () => {
   return (
-    <div className="mx-4 py-32 space-y-32">
+    <div className="mx-4 my-32 space-y-32">
       <div className="max-w-5xl mx-auto space-y-8 text-center">
         <h1 className="text-6xl font-bold">
           Hosting <span className="text-[yellow]">made simple</span> for

@@ -2,8 +2,8 @@ import "./globals.css";
 
 import { Noto_Sans as FontSans } from "next/font/google";
 
-import NavBar from "#components/zuedev/NavBar";
-import TopBar from "#components/zuedev/TopBar";
+import NavBar from "#components/NavBar";
+import TopBar from "#components/TopBar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
