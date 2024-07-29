@@ -13,7 +13,7 @@ export default () => {
       </div>
 
       <div className="max-w-4xl mx-auto space-y-4">
-        <p className="text-center">Trusted by these fine companies</p>
+        <p className="text-center text-xl">Trusted by these fine companies</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 justify-items-center">
           {[
             {
