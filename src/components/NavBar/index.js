@@ -2,7 +2,7 @@
 
 export default () => {
   function handleClick(e) {
-    if (e.target.closest("a").href) {
+    if (e.target.href !== "") {
       e.preventDefault();
 
       // fade out the page
