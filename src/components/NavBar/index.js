@@ -2,15 +2,15 @@
 
 export default () => {
   function handleClick(e) {
-    e.preventDefault();
+    if (e.target.closest("a").href) {
+      e.preventDefault();
 
-    // fade out the page
-    document.body.style.animation = "fadeOut 0.1s ease-in-out forwards";
+      // fade out the page
+      document.body.style.animation = "fadeOut 0.1s ease-in-out forwards";
 
-    // redirect to the new page
-    if (e.target.href) {
-      window.location = e.target.href;
-    } else {
+      // redirect to the new page
+      if (e.target.href) return (window.location = e.target.href);
+
       window.location = "/";
     }
   }
@@ -29,14 +29,22 @@ export default () => {
           <div className="flex flex-col sm:flex-row items-center font-bold sm:space-x-8">
             {[
               { href: "/products", label: "Products" },
-              // { href: "/services", label: "Services" },
-              // { href: "/solutions", label: "Solutions" },
+              {
+                label: "Services",
+                className: "opacity-50 cursor-not-allowed",
+              },
+              {
+                label: "Solutions",
+                className: "opacity-50 cursor-not-allowed",
+              },
               { href: "/contact", label: "Contact" },
-            ].map(({ href, label }) => (
+            ].map(({ href, label, className = "" }) => (
               <a
                 key={`${href}${label.split(" ").join("-").toLowerCase()}`}
-                href={href}
-                className="hover:text-gray-500"
+                {...(href && {
+                  href,
+                })}
+                className={`hover:text-gray-500 ${className}`}
                 onClick={handleClick}
               >
                 {label}
