@@ -16,7 +16,7 @@ export default () => {
   }
 
   return (
-    <div className="border-b-2 border-white">
+    <div className="border-b-2 border-[yellow]">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between p-4 items-center">
           <a href="/" onClick={handleClick}>
