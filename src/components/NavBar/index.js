@@ -1,25 +1,11 @@
 "use client";
 
 export default () => {
-  function handleClick(e) {
-    if (e.target.href !== "") {
-      e.preventDefault();
-
-      // fade out the page
-      document.body.style.animation = "fadeOut 0.1s ease-in-out forwards";
-
-      // redirect to the new page
-      if (e.target.href) return (window.location = e.target.href);
-
-      window.location = "/";
-    }
-  }
-
   return (
     <div className="border-b-2 border-[yellow]">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between p-4 items-center">
-          <a href="/" onClick={handleClick}>
+          <a href="/">
             <img
               src="/t1_logo_tight.png"
               alt="Termina One Logo"
@@ -56,7 +42,6 @@ export default () => {
                   href,
                 })}
                 className={`hover:text-gray-500 ${className}`}
-                onClick={handleClick}
                 title={title}
               >
                 {label}
