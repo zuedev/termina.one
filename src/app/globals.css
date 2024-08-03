@@ -10,7 +10,7 @@
 /* fade-in body */
 body {
   opacity: 0;
-  animation: fadeIn 0.25s ease-in-out forwards;
+  animation: fadeIn 0.1s ease-in-out forwards;
 }
 
 @keyframes fadeIn {

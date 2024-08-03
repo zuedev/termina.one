@@ -5,7 +5,7 @@ export default () => {
     e.preventDefault();
 
     // fade out the page
-    document.body.style.animation = "fadeOut 0.25s ease-in-out forwards";
+    document.body.style.animation = "fadeOut 0.1s ease-in-out forwards";
 
     // redirect to the new page
     if (e.target.href) {
