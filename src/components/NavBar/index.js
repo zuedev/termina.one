@@ -28,17 +28,23 @@ export default () => {
           </a>
           <div className="flex flex-col sm:flex-row items-center font-bold sm:space-x-8">
             {[
-              { href: "/products", label: "Products" },
+              { href: "/products", label: "Products", title: "Our Products" },
               {
                 label: "Services",
                 className: "opacity-50 cursor-not-allowed",
+                title: "Coming soon...",
               },
               {
                 label: "Solutions",
                 className: "opacity-50 cursor-not-allowed",
+                title: "Coming soon...",
               },
-              { href: "/contact", label: "Contact" },
-            ].map(({ href, label, className = "" }) => (
+              {
+                href: "/contact",
+                label: "Contact",
+                title: "Get in touch with us",
+              },
+            ].map(({ href, label, className = "", title }) => (
               <a
                 key={`${href}${label.split(" ").join("-").toLowerCase()}`}
                 {...(href && {
@@ -46,6 +52,7 @@ export default () => {
                 })}
                 className={`hover:text-gray-500 ${className}`}
                 onClick={handleClick}
+                title={title}
               >
                 {label}
               </a>
