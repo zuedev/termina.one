@@ -1,6 +1,36 @@
 "use client";
 
 export default () => {
+  const links = [
+    {
+      label: "About",
+      className: "opacity-50 cursor-not-allowed",
+      title: "Coming soon...",
+    },
+    {
+      label: "Products",
+      title: "Our Products",
+      dropdown: [
+        { href: "/cloud-infrastructure", label: "Cloud Infrastructure" },
+      ],
+    },
+    {
+      label: "Services",
+      title: "Our Services",
+      dropdown: [{ href: "/hosting", label: "Hosting" }],
+    },
+    {
+      label: "Solutions",
+      className: "opacity-50 cursor-not-allowed",
+      title: "Coming soon...",
+    },
+    {
+      href: "/contact",
+      label: "Contact",
+      title: "Get in touch with us",
+    },
+  ];
+
   return (
     <div className="border-b-2 border-[yellow]">
       <div className="max-w-6xl mx-auto">
@@ -13,39 +43,40 @@ export default () => {
             />
           </a>
           <div className="flex flex-col sm:flex-row items-center font-bold sm:space-x-8">
-            {[
-              {
-                label: "About",
-                className: "opacity-50 cursor-not-allowed",
-                title: "Coming soon...",
-              },
-              { href: "/products", label: "Products", title: "Our Products" },
-              {
-                label: "Services",
-                className: "opacity-50 cursor-not-allowed",
-                title: "Coming soon...",
-              },
-              {
-                label: "Solutions",
-                className: "opacity-50 cursor-not-allowed",
-                title: "Coming soon...",
-              },
-              {
-                href: "/contact",
-                label: "Contact",
-                title: "Get in touch with us",
-              },
-            ].map(({ href, label, className = "", title }) => (
-              <a
-                key={`${href}${label.split(" ").join("-").toLowerCase()}`}
-                {...(href && {
-                  href,
-                })}
-                className={`hover:text-gray-500 ${className}`}
-                title={title}
-              >
-                {label}
-              </a>
+            {links.map((link, index) => (
+              <div key={index} className="relative group" title={link.title}>
+                {link.href ? (
+                  <a
+                    href={link.href}
+                    className={`${
+                      link.className || ""
+                    } text-[#fff] hover:text-[yellow]`}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <span
+                    className={`${
+                      link.className || ""
+                    } text-[#fff] cursor-default`}
+                  >
+                    {link.label}
+                  </span>
+                )}
+                {link.dropdown && (
+                  <div className="absolute top-full left-0 bg-black z-10 hidden group-hover:block min-w-max pt-4">
+                    {link.dropdown.map((item, index) => (
+                      <a
+                        key={index}
+                        href={item.href}
+                        className="block px-4 py-2 hover:text-[yellow]"
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
