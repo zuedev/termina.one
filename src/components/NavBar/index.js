@@ -28,6 +28,11 @@ export default () => {
           </a>
           <div className="flex flex-col sm:flex-row items-center font-bold sm:space-x-8">
             {[
+              {
+                label: "About",
+                className: "opacity-50 cursor-not-allowed",
+                title: "Coming soon...",
+              },
               { href: "/products", label: "Products", title: "Our Products" },
               {
                 label: "Services",

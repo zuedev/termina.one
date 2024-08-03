@@ -3,11 +3,11 @@ export default () => {
     <div className="space-y-32">
       <div className="bg-[url('/rainbow.png')] bg-cover bg-center bg-no-repeat bg-fixed py-32">
         <div className="max-w-5xl mx-auto space-y-8 text-center">
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-6xl font-bold drop-shadow">
             Hosting <span className="text-[yellow]">made simple</span> for
             businesses both big and small.
           </h1>
-          <p className="text-3xl max-w-3xl mx-auto">
+          <p className="text-3xl max-w-3xl mx-auto drop-shadow">
             We bring you the best hosting solutions for your business. Whether
             you're a small business or a large enterprise, we've got you
             covered.
