@@ -64,7 +64,7 @@ export default () => {
                   </span>
                 )}
                 {link.dropdown && (
-                  <div className="absolute top-full left-0 bg-black z-10 hidden group-hover:block min-w-max pt-4">
+                  <div className="absolute top-full left-0 bg-[yellow] text-black sm:bg-black sm:text-white z-10 hidden group-hover:block min-w-max sm:pt-4">
                     {link.dropdown.map((item, index) => (
                       <a
                         key={index}
