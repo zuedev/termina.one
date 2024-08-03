@@ -1,19 +1,22 @@
 export default () => {
   return (
-    <div className="mx-4 py-32 space-y-32">
-      <div className="max-w-5xl mx-auto space-y-8 text-center">
-        <h1 className="text-5xl font-bold">
-          Infrastructure your <span className="text-[yellow]">developers</span>{" "}
-          will <span className="text-[red]">love</span> and your{" "}
-          <span className="text-[cyan]">business</span> can{" "}
-          <span className="text-[lime]">trust</span>.
-        </h1>
-        <p className="text-2xl max-w-3xl mx-auto text-justify">
-          We use our own infrastructure to power all of our services, so you
-          know you're getting the best. Our infrastructure is built with
-          developers in mind, so you can trust that your applications will run
-          smoothly from day one.
-        </p>
+    <div className="pb-32 space-y-32">
+      <div className="bg-[#30a] py-32">
+        <div className="max-w-5xl mx-auto space-y-8 text-center">
+          <h1 className="text-5xl font-bold">
+            Infrastructure your{" "}
+            <span className="text-[yellow]">developers</span> will{" "}
+            <span className="text-[red]">love</span> and your{" "}
+            <span className="text-[cyan]">business</span> can{" "}
+            <span className="text-[lime]">trust</span>.
+          </h1>
+          <p className="text-2xl max-w-3xl mx-auto text-justify">
+            We use our own infrastructure to power all of our services, so you
+            know you're getting the best. Our infrastructure is built with
+            developers in mind, so you can trust that your applications will run
+            smoothly from day one.
+          </p>
+        </div>
       </div>
 
       <div className="space-y-16 md:space-y-64">

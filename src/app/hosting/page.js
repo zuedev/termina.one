@@ -1,13 +1,11 @@
 export default () => {
   return (
     <div className="space-y-32 mb-32">
-      <div className="bg-[url('/rainbow.png')] bg-cover bg-center bg-no-repeat bg-fixed py-32">
-        <div className="max-w-5xl mx-auto space-y-8 text-center">
+      <div className="bg-[url('/zuedev_globally-backed_reliability_947f3eb3-5c36-4069-980f-09a2110a01d8.png')] bg-cover bg-center bg-no-repeat bg-fixed py-32">
+        <div className="max-w-5xl mx-auto space-y-8 text-center font-bold">
           <h1 className="text-6xl flex flex-col items-center space-y-4">
-            <span className="drop-shadow">Modern Cloud.</span>
-            <span className="font-bold bg-black text-[yellow] p-4">
-              ZERO MARKUPS.
-            </span>
+            <span className="drop-shadow text-black">Modern Cloud.</span>
+            <span className="bg-black text-[yellow] p-4">ZERO MARKUPS.</span>
           </h1>
         </div>
       </div>
@@ -63,24 +61,24 @@ export default () => {
                   updated 2 times per day with an average build time of 3
                   minutes and an average page size of 1.5MB.
                 </p>
-                <p>
+                <div>
                   <span className="font-bold">Vendor Costs (AWS)</span>
                   <br />
-                  <ul>
+                  <ul className="list-[square] list-inside pl-2">
                     <li>120 minutes of build & deploy: $1.20 / month</li>
                     <li>3.9GB of stored data: $0.09 / month</li>
                     <li>439.45GB of served pages: $65.92 / month</li>
                   </ul>
-                </p>
-                <p>
+                </div>
+                <div>
                   <span className="font-bold">Labour (Termina One)</span>
                   <br />
-                  <ul>
+                  <ul className="list-[square] list-inside pl-2">
                     <li>Initial consultation: $50 (USD) / one time</li>
                     <li>CI/CD setup: $25 / one time</li>
                     <li>Proactive monitoring: $10 / month</li>
                   </ul>
-                </p>
+                </div>
                 <p className="font-bold text-xl">
                   Total Cost:{" "}
                   <span className="bg-[yellow] text-black py-0.25 px-1">
