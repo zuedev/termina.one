@@ -37,6 +37,11 @@ export default ({ children }) => {
         </a>
         <NavBar />
         {children}
+        <footer className="bg-black fixed bottom-0 left-0 w-full py-2 px-1">
+          <p className="text-center text-gray-400 text-sm">
+            Termina One is a venture by <a href="https://zue.dev">zue.dev</a>
+          </p>
+        </footer>
       </body>
     </html>
   );
