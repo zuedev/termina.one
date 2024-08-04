@@ -1,8 +1,8 @@
 export default () => {
   return (
     <div className="pb-32 space-y-32">
-      <div className="bg-[#30a] py-32">
-        <div className="max-w-5xl mx-auto space-y-8 text-center">
+      <div className="bg-[url('/servers1.png')] bg-cover bg-center bg-no-repeat bg-fixed py-32">
+        <div className="max-w-5xl mx-auto space-y-8 text-center bg-black backdrop-blur bg-opacity-50 p-8">
           <h1 className="text-5xl font-bold drop-shadow">
             Infrastructure your{" "}
             <span className="text-[yellow]">developers</span> will{" "}
