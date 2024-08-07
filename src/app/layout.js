@@ -2,7 +2,6 @@ import "./globals.css";
 
 import { Noto_Sans as FontSans } from "next/font/google";
 
-import Head from "next/head";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import NavBar from "#components/NavBar";
@@ -19,6 +18,9 @@ export const metadata = {
   icons: {
     icon: "/t1_logo.png",
   },
+  verification: {
+    google: "Qougi0o67Ig2NefIckpcyOuU2vZz5TSNbvARpmjbs0Y",
+  },
 };
 
 export const viewport = {
@@ -31,12 +33,6 @@ export const viewport = {
 export default ({ children }) => {
   return (
     <html lang="en" className={fontSans.className}>
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="Qougi0o67Ig2NefIckpcyOuU2vZz5TSNbvARpmjbs0Y"
-        />
-      </Head>
       <body className="bg-black text-white">
         <a href="https://calendar.app.google/TKWTjkA9psVBW4Ab6" _target="blank">
           <TopBar>
