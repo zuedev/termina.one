@@ -2,6 +2,8 @@ import "./globals.css";
 
 import { Noto_Sans as FontSans } from "next/font/google";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import NavBar from "#components/NavBar";
 import TopBar from "#components/TopBar";
 
@@ -42,6 +44,8 @@ export default ({ children }) => {
             Termina One is a venture by <a href="https://zue.dev">zue.dev</a>
           </p>
         </footer>
+
+        <GoogleAnalytics gaId="G-V231BMCVZG" />
       </body>
     </html>
   );
