@@ -18,6 +18,7 @@ export const metadata = {
   icons: {
     icon: "/t1_logo.png",
   },
+  "google-site-verification": "Qougi0o67Ig2NefIckpcyOuU2vZz5TSNbvARpmjbs0Y",
 };
 
 export const viewport = {
