@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 
+import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import NavBar from "#components/NavBar/index.js";
@@ -44,6 +45,7 @@ export default ({ children }) => {
           </span>
         </footer>
         <GoogleAnalytics gaId="G-V231BMCVZG" />
+        <Script src="/scripts/chatwoot.js" />
       </body>
     </html>
   );
