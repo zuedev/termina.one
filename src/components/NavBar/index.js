@@ -12,7 +12,7 @@ export default () => {
         <a href="/contact">Contact</a>
       </div>
       <div>
-        <a href="/stripe">{"Login ->"}</a>
+        <a href="/login">{"Login ->"}</a>
       </div>
     </nav>
   );
