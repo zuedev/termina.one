@@ -41,9 +41,9 @@ export default () => {
 
       <section className="bg-black text-white max-w-lg mx-auto p-4 mt-8 space-y-4">
         <p>
-          If you're a client, please{" "}
-          <a href="/login" className="underline decoration-dotted">
-            log in {"->"}
+          If you're a client, please use the{" "}
+          <a href="/teleport" className="underline decoration-dotted">
+            teleporter {"->"}
           </a>
         </p>
       </section>
