@@ -1,3 +1,5 @@
+"use client";
+
 export default () => {
   return (
     <nav className="flex items-center space-x-4 justify-between font-bold">
@@ -12,7 +14,7 @@ export default () => {
         <a href="/contact">Contact</a>
       </div>
       <div>
-        <a href="/login">{"Login ->"}</a>
+        <a href="/teleport">{"Teleport ->"}</a>
       </div>
     </nav>
   );
