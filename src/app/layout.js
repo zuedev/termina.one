@@ -45,7 +45,6 @@ export default ({ children }) => {
           </span>
         </footer>
         <GoogleAnalytics gaId="G-V231BMCVZG" />
-        <Script src="/scripts/chatwoot.js" />
       </body>
     </html>
   );
