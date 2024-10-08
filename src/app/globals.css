@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .bg-gradient-yellow {
+    @apply from-[#f70] to-[#fd0] dark:from-[#f90] dark:to-[#ff0];
+  }
+  .bg-gradient-yellow-b {
+    @apply bg-gradient-yellow bg-gradient-to-b;
+  }
+  .bg-gradient-yellow-br {
+    @apply bg-gradient-yellow bg-gradient-to-br;
+  }
+
+  .bg-gradient-blue {
+    @apply from-[#00f] to-[#0df] dark:from-[#04f] dark:to-[#0ff];
+  }
+  .bg-gradient-blue-b {
+    @apply bg-gradient-blue bg-gradient-to-b;
+  }
+}
+
 /* hide scrollbar */
 ::-webkit-scrollbar {
   display: none;

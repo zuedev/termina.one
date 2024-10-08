@@ -1,8 +1,8 @@
 export default () => {
   return (
     <div>
-      <section className="space-y-4 py-16">
-        <h1 className="container mx-auto font-bold bg-clip-text text-transparent bg-gradient-to-br from-[blue] to-[cyan] text-6xl md:text-8xl">
+      <section className="space-y-4">
+        <h1 className="container mx-auto font-bold text-6xl md:text-8xl bg-clip-text text-transparent bg-gradient-blue-b">
           Dream and innovate with Termina One.
         </h1>
       </section>

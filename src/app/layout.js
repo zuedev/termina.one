@@ -34,8 +34,8 @@ export const viewport = {
 export default ({ children }) => {
   return (
     <html lang="en" className={inter.className}>
-      <body className="antialiased">
-        <header>
+      <body className="antialiased dark:text-white dark:bg-black">
+        <header className="border-b-2 border-black dark:border-white">
           <div className="container mx-auto p-4 space-y-4">
             <TopNav />
             <MainNav />

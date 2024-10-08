@@ -1,8 +1,8 @@
 export default () => {
   return (
     <div>
-      <section className="bg-white text-black max-w-lg mx-auto p-4 mt-16 space-y-4">
-        <h1 className="font-bold text-4xl">Contact Us</h1>
+      <section className="space-y-4">
+        <h1 className="font-bold text-6xl">Contact Us</h1>
         <form
           action="https://formspree.io/f/xeojaqzk"
           method="POST"
@@ -31,19 +31,13 @@ export default () => {
               className="block w-full border p-2"
             ></textarea>
           </label>
-          <button type="submit" className="bg-black text-white py-2 px-4">
+          <button
+            type="submit"
+            className="bg-[#0f0] text-black font-bold py-2 px-4"
+          >
             Submit
           </button>
         </form>
-      </section>
-
-      <section className="bg-black text-white max-w-lg mx-auto p-4 mt-8 space-y-4">
-        <p>
-          If you're a client, please use the{" "}
-          <a href="/teleport" className="underline decoration-dotted">
-            teleporter {"->"}
-          </a>
-        </p>
       </section>
     </div>
   );
