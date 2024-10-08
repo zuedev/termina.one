@@ -40,7 +40,7 @@ export default () => {
       {links.map(({ name, url, disabled }) => (
         <a
           key={name}
-          href={url}
+          href={disabled ? "#" : url}
           className={
             disabled ? "opacity-50 line-through cursor-not-allowed" : ""
           }
