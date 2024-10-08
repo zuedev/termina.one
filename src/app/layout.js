@@ -2,10 +2,10 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 
-import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-import NavBar from "#components/NavBar/index.js";
+import TopNav from "#components/TopNav/index.js";
+import MainNav from "#components/MainNav/index.js";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,15 +35,17 @@ export default ({ children }) => {
   return (
     <html lang="en" className={inter.className}>
       <body className="antialiased">
-        <header className="container mx-auto p-4">
-          <NavBar />
+        <header>
+          <div className="container mx-auto p-4 space-y-4">
+            <TopNav />
+            <MainNav />
+          </div>
         </header>
-        <main>{children}</main>
-        <footer className="mt-8">
-          <span className="fixed bottom-0 w-full bg-black text-white p-2 text-center text-xs">
-            Termina One is a venture by <a href="https://zue.dev">zue.dev</a>
-          </span>
-        </footer>
+
+        <main className="container mx-auto p-4 p-4">{children}</main>
+
+        <footer></footer>
+
         <GoogleAnalytics gaId="G-V231BMCVZG" />
       </body>
     </html>

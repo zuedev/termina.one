@@ -1,43 +1,39 @@
-import "./page.css";
-
 export default () => {
   return (
-    <div>
-      <section className="bg-black py-24 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="font-bold text-4xl">About Termina One</h1>
-        </div>
+    <div className="space-y-8">
+      <section className="pt-16">
+        <h1 className="font-bold text-2xl sm:text-4xl md:text-6xl xl:text-8xl bg-clip-text text-transparent bg-gradient-to-br from-[blue] to-[cyan]">
+          About Termina One
+        </h1>
       </section>
 
-      <section className="bg-white text-black py-8 px-4">
-        <div className="max-w-4xl mx-auto text-justify space-y-8">
-          <p>
-            Since being founded in 2012, Termina One has been dedicated to
-            breaking down the barriers of enterprise technology and providing
-            solutions that help businesses of all sizes innovate and grow. Our
-            team of experts is committed to delivering the best in software
-            development, data analytics, and business intelligence by leveraging
-            the latest technologies and methodologies.
-          </p>
-          <p>
-            Originally founded as a software development company called "Peccy
-            Networks," we have always had an intimate read on the pulse of the
-            tech industry. We have since rebranded to Termina One to better
-            reflect our commitment to providing comprehensive solutions that
-            help businesses thrive in the digital age.
-          </p>
-          <p>
-            We don't just build software; we build relationships. Our team of
-            expert developers, data scientists, and business analysts work
-            closely with our clients to understand their unique needs and
-            challenges. We then work backwards from their goals to create custom
-            solutions that drive real results.
-          </p>
-        </div>
+      <section className="space-y-4">
+        <p>
+          Since being founded in 2012, Termina One has been dedicated to
+          breaking down the barriers of enterprise technology and providing
+          solutions that help businesses of all sizes innovate and grow. Our
+          team of experts is committed to delivering the best in software
+          development, data analytics, and business intelligence by leveraging
+          the latest technologies and methodologies.
+        </p>
+        <p>
+          Originally founded as a software development company called "Peccy
+          Networks," we have always had an intimate read on the pulse of the
+          tech industry. We have since rebranded to Termina One to better
+          reflect our commitment to providing comprehensive solutions that help
+          businesses thrive in the digital age.
+        </p>
+        <p>
+          We don't just build software; we build relationships. Our team of
+          expert developers, data scientists, and business analysts work closely
+          with our clients to understand their unique needs and challenges. We
+          then work backwards from their goals to create custom solutions that
+          drive real results.
+        </p>
       </section>
 
-      <section className="py-8 px-4">
-        <div className="max-w-4xl mx-auto text-justify space-y-8">
+      <section>
+        <div className="space-y-8">
           <h2 className="font-bold text-2xl">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -62,7 +58,7 @@ export default () => {
                   "The tech industry moves fast, and we move with it. We are committed to continuous learning and improvement, both for ourselves and our clients. All of our team members are encouraged to pursue professional development opportunities whenever possible.",
               },
             ].map((value) => (
-              <div>
+              <div key={value.title}>
                 <h3 className="font-bold">{value.title}</h3>
                 <p>{value.description}</p>
               </div>
