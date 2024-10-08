@@ -1,6 +1,6 @@
 export default () => {
   return (
-    <div>
+    <div className="container mx-auto p-4">
       <section className="space-y-4">
         <h1 className="font-bold text-6xl">Contact Us</h1>
         <form

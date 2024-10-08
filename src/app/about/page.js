@@ -1,6 +1,6 @@
 export default () => {
   return (
-    <div className="py-4 space-y-8">
+    <div className="container mx-auto p-4 py-4 space-y-8">
       <section className="space-y-4">
         <h1 className="font-bold text-2xl sm:text-4xl md:text-6xl xl:text-8xl">
           About Termina One

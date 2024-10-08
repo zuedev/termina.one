@@ -42,7 +42,7 @@ export default ({ children }) => {
           </div>
         </header>
 
-        <main className="container mx-auto p-4 p-4">{children}</main>
+        <main>{children}</main>
 
         <footer></footer>
 
