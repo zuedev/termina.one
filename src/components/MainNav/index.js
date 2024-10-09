@@ -8,31 +8,30 @@ export default () => {
       name: "About",
       url: "/about",
     },
+    // {
+    //   name: "Products",
+    //   url: "/products",
+    //   disabled: true,
+    // },
+    // {
+    //   name: "Services",
+    //   url: "/services",
+    //   disabled: true,
+    // },
+    // {
+    //   name: "Solutions",
+    //   url: "/solutions",
+    //   disabled: true,
+    // },
     {
-      name: "Products",
-      url: "/products",
-      disabled: true,
+      name: "Hosting",
+      url: "/hosting",
     },
-    {
-      name: "Services",
-      url: "/services",
-      disabled: true,
-    },
-    {
-      name: "Solutions",
-      url: "/solutions",
-      disabled: true,
-    },
-    {
-      name: "Pricing",
-      url: "/pricing",
-      disabled: true,
-    },
-    {
-      name: "Documentation",
-      url: "/documentation",
-      disabled: true,
-    },
+    // {
+    //   name: "Documentation",
+    //   url: "/documentation",
+    //   disabled: true,
+    // },
     {
       name: "Contact",
       url: "/contact",

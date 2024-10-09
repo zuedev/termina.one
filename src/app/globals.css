@@ -22,6 +22,12 @@
   .bg-gradient-blue-b {
     @apply bg-gradient-blue bg-gradient-to-b;
   }
+  .bg-gradient-blue-br {
+    @apply bg-gradient-blue bg-gradient-to-br;
+  }
+  .bg-gradient-blue-br-text {
+    @apply bg-gradient-blue-br bg-clip-text text-transparent;
+  }
 }
 
 /* hide scrollbar */
