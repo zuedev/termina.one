@@ -12,6 +12,9 @@
   .bg-gradient-yellow-br {
     @apply bg-gradient-yellow bg-gradient-to-br;
   }
+  .bg-gradient-yellow-br-text {
+    @apply bg-gradient-yellow-br bg-clip-text text-transparent;
+  }
 
   .bg-gradient-blue {
     @apply from-[#00f] to-[#0df] dark:from-[#04f] dark:to-[#0ff];
