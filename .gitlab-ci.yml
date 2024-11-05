@@ -6,8 +6,6 @@ deploy_to_cloudflare_pages:
     CLOUDFLARE_ACCOUNT_ID: "424d9dabd39849818d9e22366a20e4d6"
     CLOUDFLARE_PROJECT_NAME: "www-termina-one"
   script:
-    - echo "Checking out code..."
-    - git checkout $CI_COMMIT_REF_NAME
     - echo "Installing dependencies..."
     - npm install
     - echo "Building project..."
