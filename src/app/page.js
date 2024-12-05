@@ -7,7 +7,7 @@ export default () => {
         </h1>
       </section>
 
-      <section className="bg-[yellow] text-black text-2xl py-16 text-justify">
+      <section className="bg-[yellow] text-black text-2xl py-8 text-justify">
         <h2 className="container mx-auto">
           Termina One is a technology company dedicated to breaking down
           enterprise technology barriers, offering software development, data
@@ -16,7 +16,7 @@ export default () => {
         </h2>
       </section>
 
-      <section className="container mx-auto py-16">
+      <section className="container mx-auto py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
             {

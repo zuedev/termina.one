@@ -1,6 +1,6 @@
 export default () => {
   return (
-    <div className="space-y-16">
+    <div className="space-y-12">
       <section className="space-y-4 py-16 md:py-24 lg:py-32 bg-[url('/cloud.jpg')] bg-cover bg-bottom bg-no-repeat">
         <h1 className="container mx-auto flex flex-col text-6xl md:text-8xl text-center space-y-4">
           <span className="text-white">Modern Cloud.</span>
