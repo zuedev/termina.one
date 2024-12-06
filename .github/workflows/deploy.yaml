@@ -13,8 +13,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "23"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
       - name: Copy cf files
-        run: cp -r cloudflare/* public/
+        run: cp -r cloudflare/* out/
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -22,5 +33,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 424d9dabd39849818d9e22366a20e4d6
           projectName: www-termina-one
-          directory: public
+          directory: out
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
