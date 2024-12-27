@@ -1,6 +1,6 @@
 # termina.one
 
-# Development
+## Development
 
 This repository has mirrors!
 
