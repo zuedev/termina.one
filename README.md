@@ -4,7 +4,7 @@
 
 This repository has mirrors!
 
-The original repository is here: https://code.termina.one/termina-one/termina.one
+The original repository is here: https://git.zue.dev/termina-one/termina.one
 
 Here is a list of official mirrors:
 
