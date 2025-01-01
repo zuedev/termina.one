@@ -1,6 +1,4 @@
 {
-  "name": "www.termina.one",
-  "version": "0.3.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
