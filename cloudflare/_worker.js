@@ -5,7 +5,7 @@ export default {
     if (url.pathname.startsWith("/api")) {
       if (url.pathname.startsWith("/api/teleport/")) {
         const key = url.pathname.split("/").pop();
-        const record = await env.KV.T1_TELEPORTER.get(key);
+        const record = await env.T1_TELEPORTER.get(key);
 
         if (record)
           return new Response(JSON.stringify({ url: record }), {
