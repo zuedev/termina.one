@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
-export default () => {
-  const [clicked, setClicked] = useState(false);
+const TeleportButton = () => {
+  const [state, setState] = useState({ clicked: false, error: null });
 
   function handleClick(event) {
     event.preventDefault();
-    setClicked(true);
+    setState({ ...state, clicked: true });
   }
 
   async function handleKeyDown(event) {
@@ -16,34 +16,42 @@ export default () => {
 
       if (!key) return alert("Please enter a key.");
 
-      let response = await fetch(`https://api.termina.one/teleport/${key}`);
-      response.data = await response.json();
+      try {
+        let response = await fetch(`https://api.termina.one/teleport/${key}`);
+        response.data = await response.json();
 
-      if (response.ok) return (window.location = response.data.url);
+        if (response.ok) return (window.location = response.data.url);
 
-      alert(`Teleport key "${key}" is invalid.`);
+        alert(`Teleport key "${key}" is invalid.`);
+      } catch (error) {
+        setState({ ...state, error: "An error occurred. Please try again." });
+      }
     }
   }
 
   return (
     <>
-      {clicked ? (
+      {state.clicked ? (
         <input
           type="text"
           placeholder="Enter coordinates..."
           className="bg-white text-black px-2 py-1"
           onKeyDown={handleKeyDown}
           autoFocus
+          aria-label="Enter coordinates"
         />
       ) : (
         <a
           href="#"
-          className="bg-[yellow] text-black px-2 py-1 bg-gradient-yellow-br"
+          className="bg-yellow text-black px-2 py-1 bg-gradient-yellow-br"
           onClick={handleClick}
         >
           {"Teleport ->"}
         </a>
       )}
+      {state.error && <p className="text-red-500">{state.error}</p>}
     </>
   );
 };
+
+export default TeleportButton;
