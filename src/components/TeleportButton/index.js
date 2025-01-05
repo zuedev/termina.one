@@ -17,7 +17,7 @@ const TeleportButton = () => {
       if (!key) return alert("Please enter a key.");
 
       try {
-        let response = await fetch(`https://api.termina.one/teleport/${key}`);
+        let response = await fetch(`https://termina.one/api/teleport/${key}`);
         response.data = await response.json();
 
         if (response.ok) return (window.location = response.data.url);
