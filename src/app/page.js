@@ -1,3 +1,5 @@
+import Twemoji from "#components/Twemoji/index.js";
+
 export default () => {
   return (
     <div>
@@ -20,37 +22,37 @@ export default () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
             {
-              emoji: "✨",
+              emoji: <Twemoji emoji="✨" />,
               title: "Bleeding-edge technology",
               description:
                 "We are always on the lookout for the latest technologies to help our clients stay ahead of the competition.",
             },
             {
-              emoji: "🌍",
+              emoji: <Twemoji emoji="🌍" />,
               title: "Planet-wide reach",
               description:
                 "Our network of data centers and edge locations span the globe, ensuring that your data is always close to your customers.",
             },
             {
-              emoji: "⚡️",
+              emoji: <Twemoji emoji="⚡️" />,
               title: "Lightning-fast performance",
               description:
                 "No corners are cut when it comes to the performance of our hardware. We only use the best-in-class components to ensure that your applications run smoothly.",
             },
             {
-              emoji: "🔒",
+              emoji: <Twemoji emoji="🔒" />,
               title: "Secure by design",
               description:
                 "Security is our top priority. We use the latest encryption technologies to ensure that your data is always safe.",
             },
             {
-              emoji: "🧰",
+              emoji: <Twemoji emoji="🧰" />,
               title: "Vast toolkit",
               description:
                 "Our team of experts has a wide range of skills and tools at their disposal to help you build the perfect solution for your business.",
             },
             {
-              emoji: "🏢",
+              emoji: <Twemoji emoji="🏢" />,
               title: "Enterprise-grade solutions",
               description:
                 "We have worked with some of the largest companies in the world to deliver enterprise-grade solutions that are scalable and reliable.",

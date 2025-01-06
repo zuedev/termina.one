@@ -1,3 +1,5 @@
+import Twemoji from "#components/Twemoji/index.js";
+
 export default () => {
   return (
     <div className="space-y-12">
@@ -29,25 +31,25 @@ export default () => {
       <section className="container mx-auto text-justify space-y-8">
         {[
           {
-            emoji: "⚡️",
+            emoji: <Twemoji emoji="⚡️" />,
             title: "Efficient.",
             description:
               "Whether you're an experienced engineer or a non-technical founder, we have our ways of enabling your success without getting in the way.",
           },
           {
-            emoji: "🤝",
+            emoji: <Twemoji emoji="🤝" />,
             title: "Reliable.",
             description:
               "Our zero-markups policy and transparent billing ensure that your business doesn't have any unexpected fees to pay outside of your infrastructure's scale.",
           },
           {
-            emoji: "📈",
+            emoji: <Twemoji emoji="📈" />,
             title: "Scalable.",
             description:
               "Backed by a strong 99.9% uptime SLA and over 50 partner data centres results in your sites being highly redundant and always available.",
           },
           {
-            emoji: "🏗️",
+            emoji: <Twemoji emoji="🏗️" />,
             title: "Supported.",
             description:
               "Dedicated account engineers are always standing by to provide a helping hand when needed with unlimited 100% free consultations included.",
