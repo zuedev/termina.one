@@ -5,12 +5,37 @@ import { usePathname } from "next/navigation";
 export default () => {
   const links = [
     {
-      name: "Hosting",
-      url: "/hosting",
+      name: "Home",
+      url: "/",
     },
     {
-      name: "Contact",
-      url: "mailto:contact@termina.one",
+      name: "Products",
+      url: "/products",
+      disabled: true,
+    },
+    {
+      name: "Services",
+      url: "/services",
+      disabled: true,
+    },
+    {
+      name: "Solutions",
+      url: "/solutions",
+      disabled: true,
+    },
+    {
+      name: "Pricing",
+      url: "/pricing",
+      disabled: true,
+    },
+    {
+      name: "Documentation",
+      url: "/documentation",
+      disabled: true,
+    },
+    {
+      name: "Hosting",
+      url: "/hosting",
     },
   ];
 
