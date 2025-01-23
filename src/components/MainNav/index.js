@@ -9,6 +9,10 @@ export default () => {
       url: "/",
     },
     {
+      name: "Hosting",
+      url: "/hosting",
+    },
+    {
       name: "Products",
       url: "/products",
       disabled: true,
@@ -32,10 +36,6 @@ export default () => {
       name: "Documentation",
       url: "/documentation",
       disabled: true,
-    },
-    {
-      name: "Hosting",
-      url: "/hosting",
     },
   ];
 
