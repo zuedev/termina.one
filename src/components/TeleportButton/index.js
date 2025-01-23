@@ -43,7 +43,7 @@ const TeleportButton = () => {
       ) : (
         <a
           href="#"
-          className="bg-yellow text-black px-2 py-1 bg-gradient-yellow-br font-bold"
+          className="bg-yellow text-black px-2 py-1 font-bold bg-linear-to-r from-yellow-500 to-orange-500"
           onClick={handleClick}
         >
           {"Teleport ->"}
