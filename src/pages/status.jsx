@@ -151,7 +151,7 @@ export default () => {
       {Object.keys(services).map((category) => (
         <div key={category} className="space-y-4">
           <h2 className="text-3xl font-bold">{category}</h2>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-4">
             {services[category].map((service) => {
               const { name, description, conditionResult } = service;
               const cardBackgroundColor =
