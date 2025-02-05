@@ -1,12 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import t1Logo from "/t1_logo_tight.png";
 
 function App() {
   return (
     <div className="bg-white text-black dark:bg-black dark:text-white min-h-screen">
       <div className="p-8 space-y-8 max-w-xl text-justify">
-        <img src="/t1_logo_tight.png" alt="Termina One Logo" className="h-10" />
+        <img src={t1Logo} alt="Termina One Logo" className="h-10" />
         <p className="font-bold text-2xl">
           Termina One creates, builds, and implements cutting-edge cloud
           infrastructure solutions.
