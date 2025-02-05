@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+/* set html background and text colours */
+html {
+  background-color: black;
+  color: white;
+}
+
+/* apply default padding to body */
+body {
+  padding: 1rem;
+}
+
+/* twemoji */
+img.emoji {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
