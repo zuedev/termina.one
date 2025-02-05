@@ -2,7 +2,7 @@ import t1Logo from "/t1_logo_tight.png";
 
 export default () => {
   return (
-    <div className="bg-white text-black dark:bg-black dark:text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen">
       <div className="p-8 space-y-8 max-w-2xl text-justify font-mono">
         <img src={t1Logo} alt="Termina One Logo" className="h-10" />
         <p className="font-bold text-2xl">
