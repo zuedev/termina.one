@@ -30,6 +30,34 @@ export default () => {
           .then((fetchResultJson) => fetchResultJson.status === "ok");
       },
     },
+    {
+      name: "Bare Metal",
+      description:
+        "Our bare metal service for running code on dedicated hardware",
+      condition: () => {
+        return fetch("https://api.termina.one/status/bare-metal")
+          .then((fetchResult) => fetchResult.json())
+          .then((fetchResultJson) => fetchResultJson.status === "ok");
+      },
+    },
+    {
+      name: "Storage",
+      description: "Our storage service for storing files and data",
+      condition: () => {
+        return fetch("https://api.termina.one/status/storage")
+          .then((fetchResult) => fetchResult.json())
+          .then((fetchResultJson) => fetchResultJson.status === "ok");
+      },
+    },
+    {
+      name: "Kubernetes",
+      description: "Our Kubernetes service for running containers",
+      condition: () => {
+        return fetch("https://api.termina.one/status/kubernetes")
+          .then((fetchResult) => fetchResult.json())
+          .then((fetchResultJson) => fetchResultJson.status === "ok");
+      },
+    },
   ]);
 
   useEffect(() => {
