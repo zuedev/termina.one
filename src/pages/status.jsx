@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router";
 
 export default () => {
-  const [services, setServices] = useState([
+  const servicesRef = useRef([
     {
       name: "Compute",
       description: "Our compute service for running code",
@@ -60,10 +60,13 @@ export default () => {
     },
   ]);
 
+  const [services, setServices] = useState(servicesRef.current);
+  const [countdown, setCountdown] = useState(30);
+
   useEffect(() => {
     const checkConditions = async () => {
       const updatedServices = await Promise.all(
-        services.map(async (service) => {
+        servicesRef.current.map(async (service) => {
           const conditionResult = await service.condition();
           return { ...service, conditionResult };
         })
@@ -72,6 +75,27 @@ export default () => {
     };
 
     checkConditions();
+
+    const intervalId = setInterval(() => {
+      checkConditions();
+      setCountdown(30);
+    }, 30000);
+
+    const countdownIntervalId = setInterval(() => {
+      setCountdown((prevCountdown) => {
+        if (prevCountdown > 2) {
+          return prevCountdown - 1;
+        } else {
+          window.location.reload();
+          return 30;
+        }
+      });
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+      clearInterval(countdownIntervalId);
+    };
   }, []);
 
   return (
@@ -82,6 +106,7 @@ export default () => {
         </NavLink>
       </div>
       <h1 className="text-4xl font-bold">Termina One Service Status</h1>
+      <p>Refreshing in {countdown} seconds...</p>
       <div className="grid grid-cols-4 gap-4">
         {services.map((service) => {
           const conditionResult = service.conditionResult;
