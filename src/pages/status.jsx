@@ -171,9 +171,9 @@ export default () => {
                 <div
                   key={name}
                   className={`space-y-2 p-2 ${cardBackgroundColor} ${cardTextColor}`}
+                  title={description}
                 >
-                  <h3 className="text-2xl font-bold">{name}</h3>
-                  <p>{description}</p>
+                  <h3 className="text-xl font-bold">{name}</h3>
                   <p>
                     <b>Status:</b>{" "}
                     {conditionResult === undefined
