@@ -66,7 +66,7 @@ export default () => {
 
     const countdownIntervalId = setInterval(() => {
       setCountdown((prevCountdown) =>
-        prevCountdown > 2 ? prevCountdown - 1 : 30
+        prevCountdown > 1 ? prevCountdown - 1 : window.location.reload()
       );
     }, 1000);
 
