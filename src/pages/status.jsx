@@ -124,7 +124,7 @@ export default () => {
         ]);
         for (const service of shuffledServices) {
           const conditionResult = await fetchServiceStatus(service.endpoint);
-          await delay(Math.random() * 500);
+          await delay(Math.random() * 100);
           setServices((prevServices) => ({
             ...prevServices,
             [category]: prevServices[category].map((s) =>
