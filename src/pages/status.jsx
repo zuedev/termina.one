@@ -101,6 +101,16 @@ const fetchServiceStatus = async (endpoint) => {
   return data.status === "ok";
 };
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 export default () => {
   const servicesRef = useRef(servicesData);
   const [services, setServices] = useState(servicesRef.current);
@@ -108,16 +118,21 @@ export default () => {
 
   useEffect(() => {
     const checkConditions = async () => {
-      const updatedServices = {};
       for (const category in servicesRef.current) {
-        updatedServices[category] = await Promise.all(
-          servicesRef.current[category].map(async (service) => {
-            const conditionResult = await fetchServiceStatus(service.endpoint);
-            return { ...service, conditionResult };
-          })
-        );
+        const shuffledServices = shuffleArray([
+          ...servicesRef.current[category],
+        ]);
+        for (const service of shuffledServices) {
+          const conditionResult = await fetchServiceStatus(service.endpoint);
+          await delay(Math.random() * 500);
+          setServices((prevServices) => ({
+            ...prevServices,
+            [category]: prevServices[category].map((s) =>
+              s.name === service.name ? { ...s, conditionResult } : s
+            ),
+          }));
+        }
       }
-      setServices(updatedServices);
     };
 
     checkConditions();
