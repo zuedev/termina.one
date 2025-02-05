@@ -1,65 +1,48 @@
 import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router";
 
-export default () => {
-  const servicesRef = useRef([
-    {
-      name: "Compute",
-      description: "Our compute service for running code",
-      condition: () => {
-        return fetch("https://api.termina.one/status/compute")
-          .then((fetchResult) => fetchResult.json())
-          .then((fetchResultJson) => fetchResultJson.status === "ok");
-      },
-    },
-    {
-      name: "Database",
-      description: "Our centralised database service for storing data",
-      condition: () => {
-        return fetch("https://api.termina.one/status/database")
-          .then((fetchResult) => fetchResult.json())
-          .then((fetchResultJson) => fetchResultJson.status === "ok");
-      },
-    },
-    {
-      name: "Cache",
-      description: "Our cache service for storing temporary data at the edge",
-      condition: () => {
-        return fetch("https://api.termina.one/status/cache")
-          .then((fetchResult) => fetchResult.json())
-          .then((fetchResultJson) => fetchResultJson.status === "ok");
-      },
-    },
-    {
-      name: "Bare Metal",
-      description:
-        "Our bare metal service for running code on dedicated hardware",
-      condition: () => {
-        return fetch("https://api.termina.one/status/bare-metal")
-          .then((fetchResult) => fetchResult.json())
-          .then((fetchResultJson) => fetchResultJson.status === "ok");
-      },
-    },
-    {
-      name: "Storage",
-      description: "Our storage service for storing files and data",
-      condition: () => {
-        return fetch("https://api.termina.one/status/storage")
-          .then((fetchResult) => fetchResult.json())
-          .then((fetchResultJson) => fetchResultJson.status === "ok");
-      },
-    },
-    {
-      name: "Kubernetes",
-      description: "Our Kubernetes service for running containers",
-      condition: () => {
-        return fetch("https://api.termina.one/status/kubernetes")
-          .then((fetchResult) => fetchResult.json())
-          .then((fetchResultJson) => fetchResultJson.status === "ok");
-      },
-    },
-  ]);
+const servicesData = [
+  {
+    name: "Compute",
+    description: "Our compute service for running code",
+    endpoint: "https://api.termina.one/status/compute",
+  },
+  {
+    name: "Database",
+    description: "Our centralised database service for storing data",
+    endpoint: "https://api.termina.one/status/database",
+  },
+  {
+    name: "Cache",
+    description: "Our cache service for storing temporary data at the edge",
+    endpoint: "https://api.termina.one/status/cache",
+  },
+  {
+    name: "Bare Metal",
+    description:
+      "Our bare metal service for running code on dedicated hardware",
+    endpoint: "https://api.termina.one/status/bare-metal",
+  },
+  {
+    name: "Storage",
+    description: "Our storage service for storing files and data",
+    endpoint: "https://api.termina.one/status/storage",
+  },
+  {
+    name: "Kubernetes",
+    description: "Our Kubernetes service for running containers",
+    endpoint: "https://api.termina.one/status/kubernetes",
+  },
+];
 
+const fetchServiceStatus = async (endpoint) => {
+  const response = await fetch(endpoint);
+  const data = await response.json();
+  return data.status === "ok";
+};
+
+export default () => {
+  const servicesRef = useRef(servicesData);
   const [services, setServices] = useState(servicesRef.current);
   const [countdown, setCountdown] = useState(30);
 
@@ -67,7 +50,7 @@ export default () => {
     const checkConditions = async () => {
       const updatedServices = await Promise.all(
         servicesRef.current.map(async (service) => {
-          const conditionResult = await service.condition();
+          const conditionResult = await fetchServiceStatus(service.endpoint);
           return { ...service, conditionResult };
         })
       );
@@ -82,14 +65,9 @@ export default () => {
     }, 30000);
 
     const countdownIntervalId = setInterval(() => {
-      setCountdown((prevCountdown) => {
-        if (prevCountdown > 2) {
-          return prevCountdown - 1;
-        } else {
-          window.location.reload();
-          return 30;
-        }
-      });
+      setCountdown((prevCountdown) =>
+        prevCountdown > 2 ? prevCountdown - 1 : 30
+      );
     }, 1000);
 
     return () => {
@@ -109,15 +87,13 @@ export default () => {
       <p>Refreshing in {countdown} seconds...</p>
       <div className="grid grid-cols-4 gap-4">
         {services.map((service) => {
-          const conditionResult = service.conditionResult;
-
+          const { name, description, conditionResult } = service;
           const cardBackgroundColor =
             conditionResult === undefined
               ? "bg-gray-500"
               : conditionResult
               ? "bg-green-500"
               : "bg-red-500";
-
           const cardTextColor =
             conditionResult === undefined
               ? "text-white"
@@ -127,11 +103,11 @@ export default () => {
 
           return (
             <div
-              key={service.name}
+              key={name}
               className={`space-y-2 p-4 ${cardBackgroundColor} ${cardTextColor}`}
             >
-              <h2 className="text-2xl font-bold">{service.name}</h2>
-              <p>{service.description}</p>
+              <h2 className="text-2xl font-bold">{name}</h2>
+              <p>{description}</p>
               <p>
                 <b>Status:</b>{" "}
                 {conditionResult === undefined
