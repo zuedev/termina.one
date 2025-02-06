@@ -155,7 +155,7 @@ export default () => {
   }, []);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-8">
       <div>
         <NavLink to="/" className="text-blue-400">
           ⬅️ Return to the homepage
@@ -166,7 +166,7 @@ export default () => {
       {Object.keys(services).map((category) => (
         <div key={category} className="space-y-4">
           <h2 className="text-3xl font-bold">{category}</h2>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
             {services[category].map((service) => {
               const { name, description, conditionResult } = service;
               const cardBackgroundColor =
@@ -185,7 +185,7 @@ export default () => {
               return (
                 <div
                   key={name}
-                  className={`space-y-2 p-2 ${cardBackgroundColor} ${cardTextColor}`}
+                  className={`p-2 ${cardBackgroundColor} ${cardTextColor}`}
                   title={description}
                 >
                   <h3 className="text-xl font-bold">{name}</h3>

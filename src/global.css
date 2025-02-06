@@ -6,11 +6,6 @@ html {
   color: white;
 }
 
-/* apply default padding to body */
-body {
-  padding: 1rem;
-}
-
 /* twemoji */
 img.emoji {
   display: inline-block;
