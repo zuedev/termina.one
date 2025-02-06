@@ -6,8 +6,11 @@ import "./global.css";
 
 import twemoji from "twemoji";
 
-import IndexPage from "./pages/index.jsx";
-import StatusPage from "./pages/status.jsx";
+import HomePage from "./pages/home";
+import StatusPage from "./pages/status";
+import WebHostingPage from "./pages/web-hosting";
+import GameServerHostingPage from "./pages/game-server-hosting";
+import ManagedInfrastructurePage from "./pages/managed-infrastructure";
 
 class App extends React.Component {
   componentDidMount() {
@@ -23,9 +26,18 @@ class App extends React.Component {
     return (
       <Layout>
         <Routes>
-          <Route path="/" element={<IndexPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/status" element={<StatusPage />} />
-          <Route path="*" element={<IndexPage />} />
+          <Route path="/web-hosting" element={<WebHostingPage />} />
+          <Route
+            path="/game-server-hosting"
+            element={<GameServerHostingPage />}
+          />
+          <Route
+            path="/managed-infrastructure"
+            element={<ManagedInfrastructurePage />}
+          />
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </Layout>
     );
