@@ -2,7 +2,7 @@
 
 /* set html background and text colours */
 html {
-  background-color: var(--color-slate-950);
+  background-color: var(--color-black);
   color: var(--color-white);
 }
 
