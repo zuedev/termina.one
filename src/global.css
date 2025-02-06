@@ -2,8 +2,8 @@
 
 /* set html background and text colours */
 html {
-  background-color: black;
-  color: white;
+  background-color: var(--color-slate-950);
+  color: var(--color-white);
 }
 
 /* twemoji */
