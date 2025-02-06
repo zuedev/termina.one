@@ -3,11 +3,11 @@ import { NavLink } from "react-router";
 
 export default () => {
   return (
-    <div className="space-y-4 max-w-2xl text-justify flex flex-col">
+    <div className="flex max-w-2xl flex-col space-y-4 text-justify">
       <div>
         <img src={t1Logo} alt="Termina One Logo" className="h-10" />
       </div>
-      <p className="font-bold text-2xl">
+      <p className="text-2xl font-bold">
         Termina One creates, builds, and implements cutting-edge cloud
         infrastructure solutions.
       </p>

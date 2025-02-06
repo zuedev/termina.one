@@ -128,7 +128,7 @@ export default () => {
           setServices((prevServices) => ({
             ...prevServices,
             [category]: prevServices[category].map((s) =>
-              s.name === service.name ? { ...s, conditionResult } : s
+              s.name === service.name ? { ...s, conditionResult } : s,
             ),
           }));
         }
@@ -144,7 +144,7 @@ export default () => {
 
     const countdownIntervalId = setInterval(() => {
       setCountdown((prevCountdown) =>
-        prevCountdown > 1 ? prevCountdown - 1 : window.location.reload()
+        prevCountdown > 1 ? prevCountdown - 1 : window.location.reload(),
       );
     }, 1000);
 
@@ -166,21 +166,21 @@ export default () => {
       {Object.keys(services).map((category) => (
         <div key={category} className="space-y-4">
           <h2 className="text-3xl font-bold">{category}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
             {services[category].map((service) => {
               const { name, description, conditionResult } = service;
               const cardBackgroundColor =
                 conditionResult === undefined
                   ? "bg-gray-500"
                   : conditionResult
-                  ? "bg-green-500"
-                  : "bg-red-500";
+                    ? "bg-green-500"
+                    : "bg-red-500";
               const cardTextColor =
                 conditionResult === undefined
                   ? "text-white"
                   : conditionResult
-                  ? "text-black"
-                  : "text-white";
+                    ? "text-black"
+                    : "text-white";
 
               return (
                 <div
@@ -194,8 +194,8 @@ export default () => {
                     {conditionResult === undefined
                       ? "Checking..."
                       : conditionResult
-                      ? "Operational"
-                      : "Degraded Performance"}
+                        ? "Operational"
+                        : "Degraded Performance"}
                   </p>
                 </div>
               );
