@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 
 export default () => {
   return (
-    <div className="flex max-w-2xl flex-col space-y-8 text-justify">
+    <div className="flex max-w-2xl flex-col space-y-8">
       <div>
         <img src={t1Logo} alt="Termina One Logo" className="h-10" />
       </div>

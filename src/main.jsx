@@ -33,7 +33,7 @@ class App extends React.Component {
 }
 
 const Layout = ({ children }) => {
-  return <div className="p-8 font-mono">{children}</div>;
+  return <div className="p-4 font-mono md:p-8">{children}</div>;
 };
 
 createRoot(document.getElementById("root")).render(
